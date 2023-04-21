@@ -52,5 +52,5 @@ All files have been written in the Betty Style.
 
 ## Authors
 
-[Isoghena Ewaia](estherewaia@gmail.com)
-[Gilbert Adikankwu](gilbertadikankwu@gmail.com)
+- [Isoghena Ewaia](estherewaia@gmail.com)
+- [Gilbert Adikankwu](gilbertadikankwu@gmail.com)
