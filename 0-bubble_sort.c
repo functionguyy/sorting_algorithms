@@ -5,13 +5,16 @@
  * @a: First integer to swap.
  * @b: Second integer to swap
  **/
-void swap_ints(int *a, int *b)
+void swap_ints(int a, int b)
 {
 	int temp;
 
-	temp = *a;
-	*a = *b;
-	*b = temp;
+	if (a < b)
+	{
+		temp = a;
+		a = b;
+		b = temp;
+	}
 }
 
 /**
@@ -23,25 +26,23 @@ void swap_ints(int *a, int *b)
  */
 void bubble_sort(int *array, size_t size)
 {
-	size_t i, len = size;
-	bool bubble = false;
+	size_t i, len;
 
 	if (array == NULL || size < 2)
 		return;
 
-	i = 0;
-	while (bubble == false)
+	int array[] = {19, 48, 99, 71, 13, 52, 96, 73, 86, 7};
+
+	/* run through array left to right */
+	for (i = 0; i < size; i++)
 	{
-		bubble = true;
-		for (i = 0; i < len - 1; i++)
+		/* run through array right to left */
+		for (len = size; len > i; len--)
 		{
-			if (array[i] > array[i + 1])
-			{
-				swap_ints(array + i, array + i + 1);
-				print_array(array, size);
-				bubble = false;
-			}
+
+			/* comparison function */
+			swap_ints(array[len - 1], array[len]);
+			print_array(array, size);
 		}
-		len--;
 	}
 }
