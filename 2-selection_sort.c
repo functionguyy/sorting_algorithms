@@ -9,32 +9,31 @@
 
 void selection_sort(int *array, size_t size)
 {
-	size_t i, j, min, bm;
+	size_t i, j, min;
 	int temp;
 
-	bm = 2;
-	if ((array == NULL) || (size < bm))
+	if ((array == NULL) || (size < 2))
 		return;
 
 	for (i = 0; i < size - 1; i++)
 	{
-		/* set initial minimum value */
 		min = i;
-		for (j = i + 1; j <= size; j++)
+		for (j = i + 1; j < size; j++)
 		{
 			/* compare to find smallest value in array */
-			if (array[j] < array[i])
+			if (array[j] < array[min])
 			{
 				min = j;
 			}
 		}
+
 		/* perform swap */
 		if (i != min)
 		{
 			temp = array[i];
 			array[i] = array[min];
 			array[min] = temp;
+			print_array(array, size);
 		}
-		print_array(array, size);
 	}
 }
