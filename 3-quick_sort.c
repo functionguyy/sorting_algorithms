@@ -60,7 +60,7 @@ int partition(int *array, int low, int high, size_t size)
 	pivot = array[high];
 
 
-	sub_pivot_idx = low;
+	sub_pivot_idx = low - 1;
 
 	for (j = low; j < high; j++)
 	{
@@ -68,18 +68,17 @@ int partition(int *array, int low, int high, size_t size)
 		if (array[j] <= pivot)
 		{
 			/* swap elements into sub-array */
-			if (sub_pivot_idx < j)
-			{
-				temp = array[sub_pivot_idx];
-				array[sub_pivot_idx] = array[j];
-				array[j] = temp;
-				print_array(array, size);
-			}
+		
 			sub_pivot_idx++;
+			temp = array[sub_pivot_idx];
+			array[sub_pivot_idx] = array[j];
+			array[j] = temp;
+			print_array(array, size);
 		}
 	}
 
 	/* move pivot element in position to create sub-array */
+	sub_pivot_idx++;
 	temp = array[high];
 	array[high] = array[sub_pivot_idx];
 	array[sub_pivot_idx] = temp;
