@@ -8,7 +8,7 @@
  *
  * Description: Prints the array after each swap correctly.
  */
-void bubble-sort(int *array, size_t size)
+void bubble_sort(int *array, size_t size)
 {
 	size_t i;
 	int temp;
